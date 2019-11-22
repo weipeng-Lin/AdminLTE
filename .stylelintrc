@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "stylelint-config-twbs-bootstrap/scss"
+  ],
+  "rules": {
+    "selector-max-compound-selectors": 10,
+    "selector-max-class": 7,
+    "selector-max-combinators": 6,
+    "selector-max-id": null,
+    "selector-max-specificity": null,
+    "selector-max-type": 3,
+    "selector-no-qualifying-type": null,
+    "declaration-no-important": null,
+    "property-blacklist": [
+      "border-radius",
+      "border-top-left-radius",
+      "border-top-right-radius",
+      "border-bottom-right-radius",
+      "border-bottom-left-radius",
+      "transition"
+    ]
+  }
+}
