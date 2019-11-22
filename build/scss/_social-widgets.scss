@@ -4,8 +4,8 @@
 
 //General widget style
 .card-widget {
-  border: 0;
   position: relative;
+  border: 0;
 }
 
 //User Widget Style 1
@@ -24,11 +24,11 @@
 
   //User name
   .widget-user-username {
-    font-size: 25px;
-    font-weight: 300;
-    margin-bottom: 0;
+    @include font-size(25px);
     margin-top: 0;
-    text-shadow: 0 1px 1px rgba($black, 0.2);
+    margin-bottom: 0;
+    font-weight: 300;
+    text-shadow: 0 1px 1px rgba($black, .2);
   }
 
   //User single line description
@@ -38,15 +38,15 @@
 
   //User image container
   .widget-user-image {
-    left: 50%;
-    margin-left: -45px;
     position: absolute;
     top: 80px;
+    left: 50%;
+    margin-left: -45px;
 
     > img {
-      border: 3px solid $white;
-      height: auto;
       width: 90px;
+      height: auto;
+      border: 3px solid $white;
     }
   }
 
@@ -66,10 +66,10 @@
 
   //User name
   .widget-user-username {
-    font-size: 25px;
-    font-weight: 300;
-    margin-bottom: 5px;
+    @include font-size(25px);
     margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 300;
   }
 
   //User single line description
@@ -86,8 +86,8 @@
   .widget-user-image {
     > img {
       float: left;
-      height: auto;
       width: 65px;
+      height: auto;
     }
   }
 }

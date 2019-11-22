@@ -1,39 +1,39 @@
 //
 // Component: Control Sidebar
 //
- 
+
 html.control-sidebar-animate {
   overflow-x: hidden;
 }
 
 .control-sidebar {
-  bottom: $main-footer-height;
   position: absolute;
   top: $main-header-height;
+  bottom: $main-footer-height;
   z-index: $zindex-control-sidebar;
-  
+
   &,
   &::before {
+    right: -$control-sidebar-width;
     bottom: $main-footer-height;
     display: none;
-    right: -$control-sidebar-width;
     width: $control-sidebar-width;
     @include transition(right $transition-speed $transition-fn, display $transition-speed $transition-fn);
   }
 
   &::before {
-    content: '';
-    display: block;
     position: fixed;
     top: 0;
     z-index: -1;
+    display: block;
+    content: "";
   }
 }
 
 body.text-sm {
   .control-sidebar {
-    bottom: $main-footer-height-sm;
     top: $main-header-height-sm;
+    bottom: $main-footer-height-sm;
   }
 }
 
@@ -46,11 +46,11 @@ body.text-sm {
 }
 
 .control-sidebar-push-slide {
-    .content-wrapper,
-    .main-footer {
-      @include transition(margin-right $transition-speed $transition-fn);
-    }
+  .content-wrapper,
+  .main-footer {
+    @include transition(margin-right $transition-speed $transition-fn);
   }
+}
 
 // Control sidebar open state
 .control-sidebar-open {
@@ -95,15 +95,12 @@ body.text-sm {
 
 // Dark skin
 .control-sidebar-dark {
+  background: $sidebar-dark-bg;
+
   &,
   a,
   .nav-link {
     color: $sidebar-dark-color;
-  }
-
-  //  Background
-  & {
-    background: $sidebar-dark-bg;
   }
 
   a:hover {
@@ -123,18 +120,18 @@ body.text-sm {
 
   // Tabs
   .nav-tabs {
+    margin-bottom: 5px;
     background-color: $sidebar-dark-hover-bg;
     border-bottom: 0;
-    margin-bottom: 5px;
 
     .nav-item {
       margin: 0;
     }
 
     .nav-link {
-      border-radius: 0;
-      padding: 10px 20px;
+      @include border-radius(0);
       position: relative;
+      padding: 10px 20px;
       text-align: center;
 
       &,
@@ -149,10 +146,10 @@ body.text-sm {
       &:active,
       &:focus,
       &.active {
+        color: $sidebar-dark-hover-color;
+        border-top-color: transparent;
         border-bottom-color: transparent;
         border-left-color: transparent;
-        border-top-color: transparent;
-        color: $sidebar-dark-hover-color;
       }
 
       &.active {
@@ -169,10 +166,6 @@ body.text-sm {
 // Light skin
 .control-sidebar-light {
   color: lighten($sidebar-light-color, 10%);
-
-  //  Background
-  & {
-    background: $sidebar-light-bg;
-    border-left: $main-header-bottom-border;
-  }
+  background: $sidebar-light-bg;
+  border-left: $main-header-bottom-border;
 }

@@ -14,17 +14,17 @@
 
 .text-sm {
   .dropdown-menu {
-    font-size: $font-size-sm !important;
+    @include font-size($font-size-sm !important);
   }
 
   .dropdown-toggle::after {
-    vertical-align: .2rem
+    vertical-align: .2rem;
   }
 }
 
 .dropdown-item-title {
-  font-size: $font-size-base;
   margin: 0;
+  @include font-size($font-size-base);
 }
 
 .dropdown-icon {
@@ -35,8 +35,8 @@
 
 // Dropdown Sizes
 .dropdown-menu-lg {
-  max-width: 300px;
   min-width: 280px;
+  max-width: 300px;
   padding: 0;
 
   .dropdown-divider {
@@ -57,18 +57,18 @@
 .dropdown-submenu {
   position: relative;
 
-  & > a:after {
+  & > a::after {
     @include caret-right;
     float: right;
-    margin-left: .5rem;
     margin-top: .5rem;
+    margin-left: .5rem;
   }
 
   & > .dropdown-menu {
-    left: 100%;
-    margin-left: 0px;
-    margin-top: 0px;
     top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 0;
   }
 }
 
@@ -88,8 +88,8 @@
 
 // Dropdown Sizes
 .dropdown-menu-xl {
-  max-width: 420px;
   min-width: 360px;
+  max-width: 420px;
   padding: 0;
 
   .dropdown-divider {
@@ -109,13 +109,13 @@
 // Dropdown header and footer
 .dropdown-footer,
 .dropdown-header {
+  @include font-size($font-size-sm);
   display: block;
-  font-size: $font-size-sm;
   padding: .5rem $dropdown-item-padding-x;
   text-align: center;
 }
 
-// Add fade animation to dropdown menus by appending 
+// Add fade animation to dropdown menus by appending
 // the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)
 .open:not(.dropup) > .animated-dropdown-menu {
   @include animation(flipInX .7s both);
@@ -124,19 +124,19 @@
 
 @keyframes flipInX {
   0% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-    transition-timing-function: ease-in;
     opacity: 0;
+    transition-timing-function: ease-in;
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
   }
 
   40% {
-    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
     transition-timing-function: ease-in;
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
   }
 
   60% {
-    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
     opacity: 1;
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
   }
 
   80% {
@@ -169,8 +169,8 @@
         position: absolute;
         right: 5%;
         left: auto;
-        border: 1px solid #ddd;
         background: $white;
+        border: 1px solid #ddd;
       }
     }
   }
@@ -178,14 +178,14 @@
 
 // User Menu
 .navbar-nav > .user-menu {
-  > .nav-link:after {
-    content:none;
+  > .nav-link::after {
+    content: none;
   }
 
   > .dropdown-menu {
     @include border-top-radius(0);
-    padding: 0;
     width: 280px;
+    padding: 0;
 
     &,
     > .user-body {
@@ -201,22 +201,22 @@
       // User image
       > img {
         z-index: 5;
-        height: 90px;
         width: 90px;
+        height: 90px;
         border: 3px solid;
         border-color: transparent;
-        border-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, .2);
       }
 
       > p {
+        @include font-size(17px);
         z-index: 5;
-        font-size: 17px;
-        //text-shadow: 2px 2px 3px #333333;
         margin-top: 10px;
+        //text-shadow: 2px 2px 3px #333333;
 
         > small {
+          @include font-size(12px);
           display: block;
-          font-size: 12px;
         }
       }
     }
@@ -224,14 +224,14 @@
     // Menu Body
     > .user-body {
       @include clearfix;
-      border-bottom: 1px solid $gray-700;
-      border-top: 1px solid $gray-300;
       padding: 15px;
+      border-top: 1px solid $gray-300;
+      border-bottom: 1px solid $gray-700;
 
       a {
         @include media-breakpoint-up(sm) {
-          background: $white !important;
           color: $gray-700 !important;
+          background: $white !important;
         }
       }
     }
@@ -239,8 +239,8 @@
     // Menu Footer
     > .user-footer {
       @include clearfix;
-      background-color: $gray-100;
       padding: 10px;
+      background-color: $gray-100;
 
       .btn-default {
         color: $gray-600;
@@ -257,16 +257,16 @@
   .user-image {
     @include media-breakpoint-up(sm) {
       float: none;
-      line-height: 10px;
-      margin-right: .4rem;
       margin-top: -8px;
+      margin-right: .4rem;
+      line-height: 10px;
     }
 
-    border-radius: 50%;
+    @include border-radius(50%);
     float: left;
-    height: $sidebar-user-image-width;
-    margin-right: 10px;
-    margin-top: -2px;
     width: $sidebar-user-image-width;
+    height: $sidebar-user-image-width;
+    margin-top: -2px;
+    margin-right: 10px;
   }
 }

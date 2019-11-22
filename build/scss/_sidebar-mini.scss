@@ -5,35 +5,35 @@
 // Logo style
 .logo-xs,
 .logo-xl {
-  opacity: 1;
   position: absolute;
   visibility: visible;
+  opacity: 1;
 
   &.brand-image-xs {
-    left: 18px;
     top: 12px;
+    left: 18px;
   }
 
   &.brand-image-xl {
-    left: 12px;
     top: 6px;
+    left: 12px;
   }
 }
 
 .logo-xs {
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
 
   &.brand-image-xl {
-    left: 16px;
     top: 8px;
+    left: 16px;
   }
 }
 
 .brand-link {
   &.logo-switch {
     &::before {
-      content: '\00a0';
+      content: "\00a0";
     }
   }
 }
@@ -65,13 +65,13 @@
     }
 
     .logo-xs {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
 
     .logo-xl {
-      opacity: 0;
       visibility: hidden;
+      opacity: 0;
     }
 
     .nav-sidebar.nav-child-indent .nav-treeview {
@@ -81,10 +81,10 @@
     .brand-text,
     .user-panel > .info,
     .nav-sidebar .nav-link p {
-      margin-left: -10px;
-      opacity: 0;
-      visibility: hidden;
       width: 0;
+      margin-left: -10px;
+      visibility: hidden;
+      opacity: 0;
     }
 
     .nav-sidebar > .nav-item .nav-icon {
@@ -123,10 +123,10 @@
   position: relative;
 
   > .float-right {
-    margin-top: -7px;
     position: absolute;
-    right: 10px;
     top: 50%;
+    right: 10px;
+    margin-top: -7px;
   }
 }
 
@@ -135,5 +135,5 @@
 .main-sidebar .logo-xs,
 .main-sidebar .logo-xl,
 .sidebar .user-panel .info {
-  @include transition(margin-left $transition-speed linear, opacity $transition-speed ease, visibility $transition-speed ease)
+  @include transition(margin-left $transition-speed linear, opacity $transition-speed ease, visibility $transition-speed ease);
 }

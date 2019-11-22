@@ -5,15 +5,15 @@
 // Overlay
 .modal-dialog {
   .overlay {
-    background-color: $black;
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: .7;
     position: absolute;
     top: 0;
-    width: 100%;
+    left: 0;
     z-index: ($zindex-modal + 2);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: .7;
   }
 }
 

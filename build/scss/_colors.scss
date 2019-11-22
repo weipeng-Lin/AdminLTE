@@ -13,23 +13,23 @@
 }
 
 .bg-gray {
-  background-color: $gray-500;
   color: color-yiq($gray-500);
+  background-color: $gray-500;
 }
 
 .bg-gray-light {
-  background-color: lighten($gray-200, 3%);
   color: color-yiq(lighten($gray-200, 3%)) !important;
+  background-color: lighten($gray-200, 3%);
 }
 
 .bg-black {
-  background-color: $black;
   color: color-yiq($black) !important;
+  background-color: $black;
 }
 
 .bg-white {
-  background-color: $white;
   color: color-yiq($white) !important;
+  background-color: $white;
 }
 
 // Gradient Background colors (theme colors)
@@ -43,7 +43,7 @@
 }
 
 // Backgrund Color Disabled
-[class^='bg-'].disabled {
+[class^="bg-"].disabled {
   opacity: .65;
 }
 

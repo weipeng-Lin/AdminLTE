@@ -1,14 +1,14 @@
 //
 // Component: Main Header
 //
- 
+
 .main-header {
-  border-bottom: $main-header-bottom-border;
   z-index: $zindex-main-header;
+  border-bottom: $main-header-bottom-border;
 
   .nav-link {
-    height: $nav-link-height;
     position: relative;
+    height: $nav-link-height;
   }
 
   .text-sm &,
@@ -23,7 +23,7 @@
       > .fab,
       > .glyphicon,
       > .ion {
-        font-size: $font-size-sm;
+        @include font-size($font-size-sm);
       }
     }
 
@@ -34,15 +34,15 @@
       margin: 0;
     }
 
-    &[class*='-right'] {
+    &[class*="-right"] {
       .dropdown-menu {
+        right: 0;
         left: auto;
         margin-top: -3px;
-        right: 0;
 
         @media (max-width: breakpoint-max(xs)) {
-          left: 0;
           right: auto;
+          left: 0;
         }
       }
     }
@@ -51,18 +51,18 @@
 
 // Add this class to images within a nav-link
 .navbar-img {
-  height: $main-header-height / 2;
   width: auto;
+  height: $main-header-height / 2;
 }
 
 // Navbar badge
 .navbar-badge {
-  font-size: .6rem;
-  font-weight: 300;
-  padding: 2px 4px;
+  @include font-size(.6rem);
   position: absolute;
-  right: 5px;
   top: 9px;
+  right: 5px;
+  padding: 2px 4px;
+  font-weight: 300;
 }
 
 .btn-navbar {
@@ -80,7 +80,7 @@
 
 .form-control-navbar,
 .btn-navbar {
-  transition: none;
+  @include transition(none);
 }
 
 .navbar-dark {
@@ -102,9 +102,9 @@
     &:focus {
       &,
       & + .input-group-append .btn-navbar {
+        color: $main-header-dark-form-control-focused-color;
         background-color: $main-header-dark-form-control-focused-bg;
         border: $main-header-dark-form-control-focused-border !important;
-        color: $main-header-dark-form-control-focused-color;
       }
     }
   }
@@ -129,9 +129,9 @@
     &:focus {
       &,
       & + .input-group-append .btn-navbar {
+        color: $main-header-light-form-control-focused-color;
         background-color: $main-header-light-form-control-focused-bg;
         border: $main-header-light-form-control-focused-border !important;
-        color: $main-header-light-form-control-focused-color;
       }
     }
   }

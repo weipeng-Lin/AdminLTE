@@ -3,9 +3,9 @@
 //
 
 .products-list {
-  list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  list-style: none;
 
   > .item {
     @include clearfix;
@@ -14,16 +14,16 @@
       @include border-radius($border-radius);
     }
 
-    background: $white;
     padding: 10px 0;
+    background: $white;
   }
 
   .product-img {
     float: left;
 
     img {
-      height: 50px;
       width: 50px;
+      height: 50px;
     }
   }
 
@@ -36,9 +36,9 @@
   }
 
   .product-description {
-    color: $gray-600;
     display: block;
     overflow: hidden;
+    color: $gray-600;
     text-overflow: ellipsis;
     white-space: nowrap;
   }

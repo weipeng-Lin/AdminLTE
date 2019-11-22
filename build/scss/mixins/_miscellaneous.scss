@@ -9,7 +9,7 @@
 
 // Different radius each side
 @mixin border-radius-sides($top-left, $top-right, $bottom-left, $bottom-right) {
-  border-radius: $top-left $top-right $bottom-left $bottom-right;
+  @include border-radius($top-left $top-right $bottom-left $bottom-right);
 }
 
 @mixin calc($property, $expression) {

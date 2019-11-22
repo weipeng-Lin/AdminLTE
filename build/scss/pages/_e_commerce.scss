@@ -10,8 +10,8 @@
 
 // product image thumbnails list
 .product-image-thumbs {
-  align-items: stretch;
   display: flex;
+  align-items: stretch;
   margin-top: 2rem;
 }
 
@@ -20,12 +20,12 @@
   @include box-shadow($thumbnail-box-shadow);
   @include border-radius($thumbnail-border-radius);
 
-  background-color: $thumbnail-bg;
-  border: $thumbnail-border-width solid $thumbnail-border-color;
   display: flex;
-  margin-right: 1rem;
   max-width: 6.5rem + ($thumbnail-padding * 2);
   padding: $thumbnail-padding * 2;
+  margin-right: 1rem;
+  background-color: $thumbnail-bg;
+  border: $thumbnail-border-width solid $thumbnail-border-color;
 
   img {
     @include img-fluid;
@@ -33,7 +33,7 @@
   }
 
   &:hover {
-    opacity: 0.5;
+    opacity: .5;
   }
 }
 

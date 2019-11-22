@@ -24,8 +24,8 @@ body,
 
     &,
     &::before {
-      margin: 0 auto;
       max-width: $boxed-layout-max-width;
+      margin: 0 auto;
     }
 
     & .main-sidebar {
@@ -63,8 +63,8 @@ body,
 
   .layout-navbar-fixed.sidebar-collapse & {
     .brand-link {
-      height: $main-header-height;
       width: $sidebar-mini-width;
+      height: $main-header-height;
 
       &.text-sm {
         height: $main-header-height-sm;
@@ -84,25 +84,25 @@ body,
     }
 
     a.anchor {
-      display: block;
       position: relative;
       top: calc((#{$main-header-height-inner} + #{$main-header-bottom-border-width} + (#{$main-header-link-padding-y} * 2)) / -1);
+      display: block;
     }
 
     .main-sidebar:hover {
       .brand-link {
-        transition: width $transition-speed $transition-fn;
+        @include transition(width $transition-speed $transition-fn);
         width: $sidebar-width;
       }
     }
 
     .brand-link {
-      overflow: hidden;
+      @include transition(width $transition-speed $transition-fn);
       position: fixed;
       top: 0;
-      transition: width $transition-speed $transition-fn;
-      width: $sidebar-width;
       z-index: $zindex-main-header + 1;
+      width: $sidebar-width;
+      overflow: hidden;
     }
 
     // Sidebar variants brand-link fix
@@ -125,10 +125,10 @@ body,
     }
 
     .main-header {
-      left: 0;
       position: fixed;
-      right: 0;
       top: 0;
+      right: 0;
+      left: 0;
       z-index: $zindex-main-header - 1;
     }
   }
@@ -200,16 +200,16 @@ body,
         }
 
         a.anchor {
-          display: block;
           position: relative;
           top: calc((#{$main-header-height-inner} + #{$main-header-bottom-border-width} + (#{$main-header-link-padding-y} * 2)) / -1);
+          display: block;
         }
 
         &.sidebar-collapse {
           .brand-link {
-            height: $main-header-height;
-            transition: width $transition-speed $transition-fn;
+            @include transition(width $transition-speed $transition-fn);
             width: $sidebar-mini-width;
+            height: $main-header-height;
 
             .text-sm &,
             &.text-sm {
@@ -219,19 +219,19 @@ body,
 
           .main-sidebar:hover {
             .brand-link {
-              transition: width $transition-speed $transition-fn;
+              @include transition(width $transition-speed $transition-fn);
               width: $sidebar-width;
             }
           }
         }
 
         .brand-link {
-          overflow: hidden;
+          @include transition(width $transition-speed $transition-fn);
           position: fixed;
           top: 0;
-          transition: width $transition-speed $transition-fn;
-          width: $sidebar-width;
           z-index: $zindex-main-header + 1;
+          width: $sidebar-width;
+          overflow: hidden;
         }
 
         // Sidebar variants brand-link fix
@@ -255,10 +255,10 @@ body,
         }
 
         .main-header {
-          left: 0;
           position: fixed;
-          right: 0;
           top: 0;
+          right: 0;
+          left: 0;
           z-index: $zindex-main-sidebar - 1;
         }
       }
@@ -296,14 +296,12 @@ body,
     .control-sidebar {
       bottom: 0;
     }
-  }
 
-  .layout-footer-fixed & {
     .main-footer {
-      bottom: 0;
-      left: 0;
       position: fixed;
       right: 0;
+      bottom: 0;
+      left: 0;
       z-index: $zindex-main-footer;
     }
   }
@@ -325,14 +323,12 @@ body,
         .control-sidebar {
           bottom: 0;
         }
-      }
 
-      .layout#{$infix}-footer-fixed & {
         .main-footer {
-          bottom: 0;
-          left: 0;
           position: fixed;
           right: 0;
+          bottom: 0;
+          left: 0;
           z-index: $zindex-main-footer;
         }
 
@@ -360,15 +356,12 @@ body,
 
     & .main-sidebar {
       bottom: inherit;
+      display: none;
       height: inherit;
     }
 
     .brand-image {
       height: 33px;
-    }
-
-    & .main-sidebar {
-      display: none;
     }
 
     & .content-wrapper,
@@ -467,8 +460,8 @@ body:not(.sidebar-mini-md) {
   @include media-breakpoint-down(sm) {
     &,
     &::before {
-      box-shadow: none !important;
       margin-left: -$sidebar-width;
+      box-shadow: none !important;
     }
 
     .sidebar-open & {
@@ -482,10 +475,10 @@ body:not(.sidebar-mini-md) {
 
 :not(.layout-fixed) {
   .main-sidebar {
-    height: inherit;
-    min-height: 100%;
     position: absolute;
     top: 0;
+    height: inherit;
+    min-height: 100%;
   }
 }
 
@@ -495,20 +488,20 @@ body:not(.sidebar-mini-md) {
   }
 
   .main-sidebar {
-    bottom: 0;
-    float: none;
-    height: 100vh;
-    left: 0;
     position: fixed;
     top: 0;
+    bottom: 0;
+    left: 0;
+    float: none;
+    height: 100vh;
   }
 
   .control-sidebar {
+    position: fixed;
+    top: 0;
     bottom: 0;
     float: none;
     height: 100vh;
-    position: fixed;
-    top: 0;
 
     .control-sidebar-content {
       height: calc(100vh - #{$main-header-height});
@@ -517,10 +510,10 @@ body:not(.sidebar-mini-md) {
 }
 
 .main-footer {
+  padding: $main-footer-padding;
+  color: lighten($gray-700, 25%);
   background: $main-footer-bg;
   border-top: $main-footer-border-top;
-  color: lighten($gray-700, 25%);
-  padding: $main-footer-padding;
 
   .text-sm &,
   &.text-sm {
@@ -536,19 +529,19 @@ body:not(.sidebar-mini-md) {
   }
 
   h1 {
-    font-size: 1.8rem;
+    @include font-size(1.8rem);
     margin: 0;
 
     .text-sm & {
-      font-size: 1.5rem;
+      @include font-size(1.5rem);
     }
   }
 
   .breadcrumb {
-    background: transparent;
-    line-height: 1.8rem;
-    margin-bottom: 0;
     padding: 0;
+    margin-bottom: 0;
+    line-height: 1.8rem;
+    background: transparent;
 
     .text-sm & {
       line-height: 1.5rem;
@@ -566,6 +559,6 @@ body:not(.sidebar-mini-md) {
   .control-sidebar,
   .control-sidebar *,
   .main-footer {
-    transition: none !important;
+    @include transition(none !important);
   }
 }

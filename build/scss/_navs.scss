@@ -7,7 +7,7 @@
     color: $gray-600;
 
     &:not(.active):hover {
-      color: theme-color('primary');
+      color: theme-color("primary");
     }
   }
 
@@ -22,12 +22,12 @@
 
 // Vertical Tabs
 .nav-tabs.flex-column {
-  border-bottom: 0;
   border-right: $nav-tabs-border-width solid $nav-tabs-border-color;
+  border-bottom: 0;
 
   .nav-link {
-    border-bottom-left-radius: $nav-tabs-border-radius;
-    border-top-right-radius: 0;
+    @include border-top-right-radius(0);
+    @include border-bottom-left-radius($nav-tabs-border-radius);
     margin-right: -$nav-tabs-border-width;
 
     @include hover-focus {
@@ -41,14 +41,14 @@
   }
 
   &.nav-tabs-right {
-    border-left: $nav-tabs-border-width solid $nav-tabs-border-color;
     border-right: 0;
+    border-left: $nav-tabs-border-width solid $nav-tabs-border-color;
 
     .nav-link {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: $nav-tabs-border-radius;
-      border-top-left-radius: 0;
-      border-top-right-radius: $nav-tabs-border-radius;
+      @include border-bottom-left-radius(0);
+      @include border-bottom-right-radius($nav-tabs-border-radius);
+      @include border-top-left-radius(0);
+      @include border-top-right-radius($nav-tabs-border-radius);
       margin-left: -$nav-tabs-border-width;
 
       @include hover-focus {
@@ -67,8 +67,8 @@
   flex-direction: row;
 
   .nav-link {
-    padding-left: $navbar-nav-link-padding-x;
     padding-right: $navbar-nav-link-padding-x;
+    padding-left: $navbar-nav-link-padding-x;
   }
 }
 

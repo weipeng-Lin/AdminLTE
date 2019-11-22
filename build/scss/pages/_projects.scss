@@ -14,7 +14,7 @@
   // table avatar
   img.table-avatar,
   .table-avatar img {
-    border-radius: 50%;
+    @include border-radius(50%);
     display: inline;
     width: 2.5rem;
   }

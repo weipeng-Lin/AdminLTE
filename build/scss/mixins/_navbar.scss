@@ -17,8 +17,8 @@
   .nav .open > a:hover,
   .nav .open > a:focus,
   .nav > .active > a {
-    background: $hover-bg;
     color: $hover-color;
+    background: $hover-bg;
   }
 
   // Add color to the sidebar toggle button
@@ -27,8 +27,8 @@
 
     &:hover,
     &:focus {
-      background: $hover-bg;
       color: $hover-color;
+      background: $hover-bg;
     }
   }
 }

@@ -4,29 +4,31 @@
 
 // text modification
 .text-bold {
-  &, &.table td, &.table th {
+  &,
+  &.table td,
+  &.table th {
     font-weight: 700;
   }
 }
 
 .text-xs {
-  font-size: $font-size-xs !important;
+  @include font-size($font-size-xs !important);
 }
 
 .text-sm {
-  font-size: $font-size-sm !important;
+  @include font-size($font-size-sm !important);
 }
 
 .text-md {
-  font-size: $font-size-base !important;
+  @include font-size($font-size-base !important);
 }
 
 .text-lg {
-  font-size: $font-size-lg !important;
+  @include font-size($font-size-lg !important);
 }
 
 .text-xl {
-  font-size: $font-size-xl !important;
+  @include font-size($font-size-xl !important);
 }
 
 // text color variations

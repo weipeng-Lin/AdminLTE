@@ -85,13 +85,13 @@ $theme-colors: map-merge((
 // stylelint-enable
 
 // Set a specific jump point for requesting color jumps
-$theme-color-interval:      8% !default;
+$theme-color-interval: 8% !default;
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
 $yiq-contrasted-threshold: 150 !default;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
-$yiq-text-dark: #1F2D3D !default;
+$yiq-text-dark: #1f2d3d !default;
 $yiq-text-light: $white !default;
 
 // Options
@@ -169,11 +169,11 @@ $paragraph-margin-bottom:   1rem !default;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
@@ -185,10 +185,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -521,7 +521,7 @@ $custom-file-box-shadow:            $custom-select-focus-box-shadow !default;
 $custom-file-button-color:          $custom-file-color !default;
 $custom-file-button-bg:             $input-group-addon-bg !default;
 $custom-file-text: (
-        en: "Browse"
+  en: "Browse"
 ) !default;
 
 $custom-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-btn-focus-box-shadow !default;

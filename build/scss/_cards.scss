@@ -18,20 +18,20 @@
   }
 
   &.maximized-card {
-    height: 100% !important;
-    left: 0;
-    max-height: 100% !important;
-    max-width: 100% !important;
     position: fixed;
     top: 0;
-    width: 100% !important;
+    left: 0;
     z-index: 9999;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
 
     &.was-collapsed .card-body {
       display: block !important;
     }
 
-    [data-widget='collapse'] {
+    [data-widget="collapse"] {
       display: none;
     }
 
@@ -51,8 +51,8 @@
 
   .nav.flex-column {
     > li {
-      border-bottom: 1px solid $card-border-color;
       margin: 0;
+      border-bottom: 1px solid $card-border-color;
 
       &:last-of-type {
         border-bottom: 0;
@@ -94,8 +94,8 @@
         border-bottom: 0;
 
         &:first-child .nav-link {
-          border-left: 0;
           margin-left: 0;
+          border-left: 0;
         }
       }
     }
@@ -107,8 +107,8 @@
     .card-header {
       .nav-item {
         &:first-child .nav-link {
-          border-left: 0;
           margin-left: 0;
+          border-left: 0;
         }
       }
 
@@ -116,13 +116,11 @@
         border-top: 3px solid transparent;
 
         &:hover {
-          border-top: 3px solid $nav-tabs-border-color;
-        }
-
-        &.active {
-          &:hover {
+          &.active {
             margin-top: 0;
           }
+
+          border-top: 3px solid $nav-tabs-border-color;
         }
       }
     }
@@ -144,10 +142,10 @@ html.maximized-card {
 
 // Box header
 .card-header {
+  position: relative;
+  padding: (($card-spacer-y / 2) * 2) $card-spacer-x;
   background-color: transparent;
   border-bottom: 1px solid $card-border-color;
-  padding: (($card-spacer-y / 2) * 2) $card-spacer-x;
-  position: relative;
 
   @if $enable-rounded {
     @include border-top-radius($border-radius);
@@ -164,21 +162,21 @@ html.maximized-card {
     .input-group,
     .nav,
     .pagination {
-      margin-bottom: -$card-spacer-y / 2.5;
       margin-top: -$card-spacer-y / 2.5;
+      margin-bottom: -$card-spacer-y / 2.5;
     }
 
-    [data-toggle='tooltip'] {
+    [data-toggle="tooltip"] {
       position: relative;
     }
   }
 }
 
 .card-title {
+  @include font-size($card-title-font-size);
   float: left;
-  font-size: $card-title-font-size;
-  font-weight: $card-title-font-weight;
   margin: 0;
+  font-weight: $card-title-font-weight;
 }
 
 .card-text {
@@ -188,11 +186,11 @@ html.maximized-card {
 
 // Box Tools Buttons
 .btn-tool {
-  background: transparent;
-  color: $gray-500;
-  font-size: $font-size-sm;
-  margin: -(($card-spacer-y / 2) * 2) 0;
+  @include font-size($font-size-sm);
   padding: .25rem .5rem;
+  margin: -(($card-spacer-y / 2) * 2) 0;
+  color: $gray-500;
+  background: transparent;
 
   .btn-group.show &,
   &:hover {
@@ -207,11 +205,11 @@ html.maximized-card {
 
 .text-sm {
   .card-title {
-    font-size: $card-title-font-size-sm;
+    @include font-size($card-title-font-size-sm);
   }
 
   .nav-link {
-    padding: $card-nav-link-padding-sm-y $card-nav-link-padding-sm-x; 
+    padding: $card-nav-link-padding-sm-y $card-nav-link-padding-sm-x;
   }
 }
 
@@ -264,8 +262,8 @@ html.maximized-card {
 
   .card-comment {
     @include clearfix;
-    border-bottom: 1px solid $gray-200;
     padding: 8px 0;
+    border-bottom: 1px solid $gray-200;
 
     &:last-of-type {
       border-bottom: 0;
@@ -276,25 +274,25 @@ html.maximized-card {
     }
 
     img {
-      height: $card-img-size;
-      width: $card-img-size;
       float: left;
+      width: $card-img-size;
+      height: $card-img-size;
     }
   }
 
   .comment-text {
-    color: lighten($gray-700, 20%);
     margin-left: 40px;
+    color: lighten($gray-700, 20%);
   }
 
   .username {
-    color: $gray-700;
     display: block;
     font-weight: 600;
+    color: $gray-700;
   }
 
   .text-muted {
-    font-size: 12px;
+    @include font-size(12px);
     font-weight: 400;
   }
 }
@@ -304,45 +302,45 @@ html.maximized-card {
 
 // Widget: TODO LIST
 .todo-list {
-  list-style: none;
+  padding: 0;
   margin: 0;
   overflow: auto;
-  padding: 0;
+  list-style: none;
 
   // Todo list element
   > li {
     @include border-radius(2px);
+    padding: 10px;
+    margin-bottom: 2px;
+    color: $gray-700;
     background: $gray-100;
     border-left: 2px solid $gray-200;
-    color: $gray-700;
-    margin-bottom: 2px;
-    padding: 10px;
 
     &:last-of-type {
       margin-bottom: 0;
     }
 
-    > input[type='checkbox'] {
+    > input[type="checkbox"] {
       margin: 0 10px 0 5px;
     }
 
     .text {
       display: inline-block;
-      font-weight: 600;
       margin-left: 5px;
+      font-weight: 600;
     }
 
     // Time labels
     .badge {
-      font-size: .7rem;
+      @include font-size(.7rem);
       margin-left: 10px;
     }
 
     // Tools and options box
     .tools {
-      color: theme-color('danger');
       display: none;
       float: right;
+      color: theme-color("danger");
 
       // icons
       > .fa,
@@ -351,8 +349,8 @@ html.maximized-card {
       > .fab,
       > .glyphicon,
       > .ion {
-        cursor: pointer;
         margin-right: 5px;
+        cursor: pointer;
       }
     }
 
@@ -388,9 +386,9 @@ html.maximized-card {
   }
 
   .handle {
-    cursor: move;
     display: inline-block;
     margin: 0 5px;
+    cursor: move;
   }
 }
 

@@ -14,9 +14,9 @@
 }
 
 .lockscreen-logo {
+  margin-bottom: 25px;
   font-size: 35px;
   font-weight: 300;
-  margin-bottom: 25px;
   text-align: center;
 
   a {
@@ -25,36 +25,36 @@
 }
 
 .lockscreen-wrapper {
+  max-width: 400px;
   margin: 0 auto;
   margin-top: 10%;
-  max-width: 400px;
 }
 
 
 // Will contain the image and the sign in form
 .lockscreen-item {
   @include border-radius(4px);
-  background: $white;
-  margin: 10px auto 30px;
-  padding: 0;
   position: relative;
   width: 290px;
+  padding: 0;
+  margin: 10px auto 30px;
+  background: $white;
 }
 
 // User image
 .lockscreen-image {
   @include border-radius(50%);
-  background: $white;
-  left: -10px;
-  padding: 5px;
   position: absolute;
   top: -25px;
+  left: -10px;
   z-index: 10;
+  padding: 5px;
+  background: $white;
 
   > img {
     @include border-radius(50%);
-    height: 70px;
     width: 70px;
+    height: 70px;
   }
 }
 
@@ -67,9 +67,9 @@
   }
 
   .btn {
+    padding: 0 10px;
     background-color: $white;
     border: 0;
-    padding: 0 10px;
   }
 }
 

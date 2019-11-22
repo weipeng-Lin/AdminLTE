@@ -6,9 +6,9 @@
   @include border-radius($border-radius);
   @include box-shadow($card-shadow);
 
+  position: relative;
   display: block;
   margin-bottom: 20px;
-  position: relative;
 
   // content wrapper
   > .inner {
@@ -16,26 +16,26 @@
   }
 
   > .small-box-footer {
-    background: rgba($black, 0.1);
-    color: rgba($white, 0.8);
+    position: relative;
+    z-index: 10;
     display: block;
     padding: 3px 0;
-    position: relative;
+    color: rgba($white, .8);
     text-align: center;
     text-decoration: none;
-    z-index: 10;
+    background: rgba($black, .1);
 
     &:hover {
-      background: rgba($black, 0.15);
       color: $white;
+      background: rgba($black, .15);
     }
   }
 
   h3 {
     @include font-size(2.2rem);
-    font-weight: bold;
-    margin: 0 0 10px 0;
     padding: 0;
+    margin: 0 0 10px 0;
+    font-weight: 400;
     white-space: nowrap;
   }
 
@@ -79,10 +79,10 @@
     font-size: 1rem;
 
     > small {
-      color: $gray-100;
       display: block;
-      font-size: 0.9rem;
       margin-top: 5px;
+      color: $gray-100;
+      font-size: .9rem;
     }
   }
 
@@ -93,15 +93,15 @@
 
   // the icon
   .icon {
-    color: rgba($black, 0.15);
     z-index: 0;
+    color: rgba($black, 0.15);
 
     > i {
-      font-size: 90px;
+      @include transition(all $transition-speed linear);
+      @include font-size(90px);
       position: absolute;
-      right: 15px;
       top: 15px;
-      transition: all $transition-speed linear;
+      right: 15px;
 
       &.fa,
       &.fas,
@@ -109,7 +109,7 @@
       &.fab,
       &.glyphicon,
       &.ion {
-        font-size: 70px;
+        @include font-size(70px);
         top: 20px;
       }
     }
@@ -122,7 +122,7 @@
 
     // Animate icons on small box hover
     .icon > i {
-      font-size: 95px;
+      @include font-size(95px);
 
       &.fa,
       &.fas,
@@ -130,7 +130,7 @@
       &.fab,
       &.glyphicon,
       &.ion {
-        font-size: 75px;
+        @include font-size(75px);
       }
     }
   }
@@ -146,7 +146,7 @@
     }
 
     p {
-      font-size: 12px;
+      @include font-size(12px);
     }
   }
 }

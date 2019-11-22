@@ -6,8 +6,8 @@
 @mixin sidebar-color($color) {
   .nav-sidebar > .nav-item {
     & > .nav-link.active {
-      background-color: $color;
       color: color-yiq($color);
+      background-color: $color;
     }
   }
 
@@ -24,8 +24,8 @@
   .nav-sidebar,
   .nav-sidebar > .nav-header,
   .nav-sidebar .nav-link {
-    white-space: nowrap;
     overflow: hidden;
+    white-space: nowrap;
   }
 
   // When the sidebar is collapsed...
@@ -54,19 +54,19 @@
     .nav-sidebar .nav-link p,
     .brand-text {
       margin-left: -10px;
-      opacity: 0;
       visibility: hidden;
+      opacity: 0;
     }
 
     .logo-xl {
-      opacity: 0;
       visibility: hidden;
+      opacity: 0;
     }
 
     .logo-xs {
       display: inline-block;
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
 
     // Modify the sidebar to shrink instead of disappearing
@@ -76,8 +76,8 @@
       &,
       &::before {
         // Don't go away! Just shrink
-        margin-left: 0;
         width: $sidebar-mini-width;
+        margin-left: 0;
       }
 
       .user-panel {
@@ -112,8 +112,8 @@
         .logo-xl {
           display: inline-block;
           margin-left: 0;
-          opacity: 1;
           visibility: visible;
+          opacity: 1;
         }
 
         .nav-flat {
@@ -129,8 +129,8 @@
         }
 
         .logo-xs {
-          opacity: 0;
           visibility: hidden;
+          opacity: 0;
         }
 
         .brand-image {
